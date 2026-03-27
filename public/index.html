@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AuthApp</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f9f7f4;
+      color: #1a1a2e;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 2.5rem;
+      border-bottom: 1px solid #e8e4de;
+      background: #fff;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: #1a1a2e;
+    }
+
+    .nav-links { display: flex; gap: 12px; }
+
+    .btn-outline {
+      padding: 0.5rem 1.2rem;
+      border: 1.5px solid #1a1a2e;
+      border-radius: 8px;
+      background: transparent;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: #1a1a2e;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover { background: #1a1a2e; color: #fff; }
+
+    .btn-primary {
+      padding: 0.5rem 1.2rem;
+      border: 1.5px solid #4f46e5;
+      border-radius: 8px;
+      background: #4f46e5;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover { background: #4338ca; border-color: #4338ca; }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ede9fe;
+      color: #4f46e5;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.15;
+      max-width: 700px;
+      margin-bottom: 1.25rem;
+      color: #1a1a2e;
+    }
+
+    h1 span { color: #4f46e5; }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #5f5f7a;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+    .btn-large {
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border-radius: 10px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .feature-card {
+      background: #fff;
+      border: 1px solid #e8e4de;
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #ede9fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #1a1a2e;
+    }
+
+    .feature-card p { font-size: 0.9rem; color: #5f5f7a; line-height: 1.6; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #9999aa;
+      border-top: 1px solid #e8e4de;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">AuthApp</div>
+    <div class="nav-links">
+      <a href="login.html" class="btn-outline">Log in</a>
+      <a href="register.html" class="btn-primary">Get started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="badge">Secure — Fast — Simple</div>
+    <h1>Authentication that <span>just works</span></h1>
+    <p class="subtitle">A full-stack auth system built with Node.js, Express, MongoDB and JWT. Register, login, and access protected routes instantly.</p>
+    <div class="hero-btns">
+      <a href="register.html" class="btn-primary btn-large">Create account</a>
+      <a href="login.html" class="btn-outline btn-large">Log in</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Password hashing</h3>
+      <p>Passwords are hashed using bcrypt before storing. Never stored as plain text.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🪙</div>
+      <h3>JWT tokens</h3>
+      <p>Secure JSON Web Tokens issued on login, verified on every protected request.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <h3>Protected routes</h3>
+      <p>Middleware blocks unauthorized access. Only valid tokens get through.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🍃</div>
+      <h3>MongoDB storage</h3>
+      <p>User data stored securely in MongoDB Atlas with Mongoose schemas.</p>
+    </div>
+  </section>
+
+  <footer>Built with Node.js · Express · MongoDB · JWT</footer>
+
+</body>
+</html>
